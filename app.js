@@ -1108,3 +1108,341 @@ for(i=5;i<=100;i++){
         document.write(i+", ");
     }
 }
+
+// // // Chapter No. 21-25  --- STRING METHODS 
+// // // -------------------------------------
+
+// Q-1
+var firstname = prompt("Enter your First Name: ");
+var lastname = prompt("Enter your Last Name: ");
+
+var fullname = firstname+" " +lastname
+
+alert("Welcome Mr. /Ms. " +fullname+" to our website"); 
+
+// Q-2
+var mobmod = prompt("Enter your favorite mobile phone model: ");
+
+document.write("My favorite phone is: " + mobmod +"<br>");
+document.write("Length of string: " + mobmod.length +"<br>");
+
+// Q-3
+var countname = "Pakistani";
+document.write("String: "+countname + "<br>")
+document.write("index of 'n': "+countname.indexOf('n') + "<br>");
+
+// Q-4
+var str = "Hello World";
+document.write("String: "+str + "<br>");
+document.write("Last index of 'l': "+str.lastIndexOf('l') + "<br>");
+
+// Q-5
+var string = "Pakistani";
+document.write("String: "+string+"<br>");
+document.write("Character at index 3 is:"+string[3]+"<br>");
+
+// Q-6
+var firstname = prompt("Enter your First Name: ");
+var lastname = prompt("Enter your Last Name: ");
+var fullname = firstname.concat(" ",lastname);
+document.write("Welcome Mr. /Ms. " +fullname+" to our website"); 
+
+// Q-7
+var city = "Hyderabad"
+document.write("City: "+city +"<br>");
+document.write("After replacement: "+city.replace("Hyder","Islam")+"<br>");
+
+// Q-8
+var message = "Ali and Sami are best friends. They play cricket and football together."; 
+document.writeln(message.replaceAll("and","&"));
+
+// Q-9
+var strnum = "472";
+var cnvnum = Number(strnum);
+document.write("Value: "+strnum+"<br>");
+document.write("Type: "+typeof(strnum)+"<br>");
+document.write("Value: "+cnvnum+"<br>");
+document.write("Type: "+typeof(cnvnum)+"<br>");
+
+// Q-10
+var text = prompt("Enter any text: ");
+document.write("User input: "+text);
+document.write("<br>");
+document.write("Upper case: "+text.toUpperCase());
+document.write("<br>");
+
+// Q-11
+var inptxt = prompt("Enter any text: ");
+var remtxt = inptxt.slice(1)
+document.write(inptxt[0].toUpperCase()+remtxt);
+
+// Q-12
+ var num = 35.36
+ var constr = num.toString();
+document.write("Number: "+num+"<br>");
+ document.write("Result: "+constr.slice(0,2)+constr.slice(3,5))
+
+// Q-13
+var usrinp = prompt("Enter any text: ");
+
+
+for(i=0;i<usrinp.length;i++){
+    var myascii = usrinp.charCodeAt(i);
+    if (myascii==33 || myascii==44 || myascii==46 || myascii==64) 
+        alert("Pleae enter a valid username");
+}
+
+// Q-14
+var bakeryItems = ["cake","apple pie","cookies","chips","patties"];
+var userinput = prompt("Welcome to ABC Bakery. What do you want to order sir/ma'a`m?").toLowerCase();
+
+for(i=0;i<=bakeryItems.length;i++){
+    if(userinput===bakeryItems[0] && i==0){
+        document.write("<strong>"+bakeryItems[0]+" is <strong>available</strong> at index 0 in our bakery"+"<br>");
+      }
+
+    else if(userinput===bakeryItems[1] && i==1){
+        document.write("<strong>"+bakeryItems[1]+" is <strong>available</strong> at index 1 in our bakery"+"<br>");
+    }
+
+    else if(userinput===bakeryItems[2] && i==2){
+        document.write("<strong>"+bakeryItems[2]+" is <strong>available</strong> at index 2 in our bakery"+"<br>");
+      }
+    else if(userinput===bakeryItems[3] && i==3){
+        document.write("<strong>"+bakeryItems[3]+" is <strong>available</strong> at index 3 in our bakery"+"<br>");
+      }
+    else if(userinput===bakeryItems[4] && i==4){
+        document.write("<strong>"+bakeryItems[4]+" is <strong>available</strong> at index 4 in our bakery"+"<br>");
+     }
+}
+
+if(userinput!==bakeryItems[0] && userinput!==bakeryItems[1] && userinput!==bakeryItems[2] && userinput!==bakeryItems[3] && userinput!==bakeryItems[4]){
+        document.write("We are sorry. "+userinput+" is <strong>not available</strong> in our bakery"+"<br>");
+    }
+
+// Q-15
+var usrinp = prompt("Enter your password");
+var myascii = usrinp.charCodeAt(0);
+var flag=""
+
+for(i=0;i<usrinp.length;i++){
+    alert(myascii);
+    if(myascii>=48 && myascii<=57){
+    }
+    // else if(myascii>=65 && myascii<=90){
+    // }
+    // else if(myascii>=97 && myascii<=122){
+    // }
+     else{
+         var flag = "False"
+    }
+}
+if(flag="False"){
+    alert("Invalid Password");
+}
+
+var chkstr = prompt("Type any Character / Number");
+
+var myascii = chkstr.charCodeAt(0);
+
+if(myascii>65 && myascii<=90){
+    alert("This is an Uppercase Letter");
+}
+
+
+// Q-16
+var university = "University of Karachi"; 
+var myArray = university.split("");
+
+for(i=0;i<myArray.length;i++){
+    document.write(university[i]);
+    document.write("<br>");
+}
+console.log(myArray)
+// Q-17
+var usrinp = prompt("Enter any word");
+for(i=0;i<usrinp.length;i++){
+    if(i==usrinp.length-1){
+        alert(usrinp[i]);
+    }
+}
+
+// Q-18
+
+var text = "The quick brown fox jumps over the lazy dog";
+document.write("Welcome");
+document.write(text.count("the"));
+
+// Chapter No. 26-30  --- MATH METHODS
+// -----------------------------------
+
+// Q-1
+var num = prompt("Enter any number greater than 0");
+if (num<0){
+	alert("Kindly Enter Positive Value");
+}
+
+// a)
+if(num>=0){
+   document.write("Number: "+num+"<br>");
+}
+
+// b)
+if(num>=0){
+   document.write("Round off value: "+Math.round(num)+"<br>");
+}
+
+// c)
+if(num>=0){
+   document.write("Floor value: "+Math.floor(num)+"<br>");
+}
+
+// d)
+if(num>=0){
+   document.write("Ceil value: "+Math.ceil(num)+"<br>");
+}
+
+// Q-2
+var num = prompt("Enter any number Less than 0");
+if (num>0){
+	alert("Kindly Enter Negative Value");
+}
+
+// a)
+if(num<=0){   
+    document.write("Number: "+num+"<br>");
+}
+
+// b)
+if(num<=0){
+    document.write("Roud off value: "+Math.round(num)+"<br>");
+}
+
+// c)
+if(num<=0){
+    document.write("Floor value: "+Math.floor(num)+"<br>");
+}
+// d)
+if(num<=0){
+    document.write("Ceil value: "+Math.ceil(num)+"<br>");
+}
+
+// Q-3
+var num = prompt("Enter any number");
+document.write("absolute value of  "+num+" is "+Math.abs(num)+"<br>");
+
+// Q-4
+alert(Math.round(Math.random()*100));
+
+// Q-5
+alert(Math.round(Math.random()));
+if(Math.round(Math.random())==1){
+    document.write("Random coin value: Head")
+}
+else{
+    document.write("Random coin value: Tail")
+}
+
+// Q-6
+if(Math.random()*1000>=1){
+    document.write("Random number between 1 and 100: "+Math.round(Math.random()*100))
+}
+
+// Q-7
+    // a)
+    var usrinp=prompt("Enter your weight in kilograms");
+    mynum=parseInt(usrinp);
+    alert("The weight of user is: "+mynum+" kilograms");
+
+    // b)
+    var usrinp=prompt("Enter your weight in kilograms");
+    mynum=parseInt(usrinp);
+    alert("The weight of user is: "+mynum+" kilograms");
+
+    // c)
+    var usrinp=prompt("Enter your weight in kilograms");
+    mynum=parseFloat(usrinp);
+    alert(mynum)
+    alert("The weight of user is: "+mynum+" kilograms");
+    
+      // d)
+    var usrinp=prompt("Enter your weight in kilograms");
+    mynum=parseFloat(usrinp);
+    alert("The weight of user is: "+mynum+" kilograms");
+
+// Q-8
+var mynum=Math.round(Math.random()*10);
+var usrinp=prompt("Enter a number between 1 and 10");
+if(usrinp==mynum){
+    alert("Congratulations...");
+}
+else{
+    alert("Try again...");
+}
+
+// Chapter No. 31-34  --- DATE METHODS
+// -----------------------------------
+
+// Q-1
+var Date = new Date();
+document.write(Date)
+
+// Q-2
+var Date = new Date();
+var mntharr =["January","February","March","April","May","June","July","August","September","October","November","December"];
+document.write("Current Month: "+mntharr[Date.getMonth()])
+
+// Q-3
+var Date = new Date();
+var dayarr = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+var currday = dayarr[Date.getDay()]
+
+document.write("Today is "+currday.slice(0,3))
+
+// Q-4
+var Date = new Date();
+var dayarr = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+var currday = dayarr[Date.getDay()]
+alert(currday)
+if (currday.slice(0,3)==="Sat" || currday.slice(0,3)==="Sun"){
+  document.write("Today is Fun day")  
+} 
+else{
+    document.write("Today is Boring day")
+}
+
+// Q-5
+var Date = new Date();
+var dayarr = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
+var currdate = dayarr[Date.getDate()]
+alert(currdate)
+if (currdate>=0 && currdate<=15){
+  document.write("First fifteen days of the month")  
+} 
+else{
+    document.write("Second fifteen days of the month")
+}
+
+// Q-6
+var Date = new Date();
+// var EpDate = new Date("1970-01-01");
+document.write("Current Date: "+ Date,"<br>");
+// document.write("Elapsed milliseconds since January 1, 1970: "+EpDate.getMilliseconds(),"<br>");
+document.write("Elapsed milliseconds since January 1, 1970: ","<br>");
+document.write("Elapsed minutes since January 1, 1970: ","<br>");
+
+// Q-7
+var Date = new Date();
+var dayarr = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
+var currhours= dayarr[Date.getHours()]
+alert(currhours)
+if (currhours>=0 && currhours<=11){
+  document.write("Its AM")  
+} 
+else{
+    document.write("Its PM")
+}
+
+// Q-8
+var Date = new Date("2020-12-31");
+document.write("Later Date"+Date,"<br>");
