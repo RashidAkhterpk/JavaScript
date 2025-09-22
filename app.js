@@ -1259,6 +1259,7 @@ for(i=0;i<myArray.length;i++){
     document.write("<br>");
 }
 console.log(myArray)
+
 // Q-17
 var usrinp = prompt("Enter any word");
 for(i=0;i<usrinp.length;i++){
@@ -1424,18 +1425,18 @@ else{
 }
 
 // Q-6
-var Date = new Date();
-// var EpDate = new Date("1970-01-01");
-document.write("Current Date: "+ Date,"<br>");
-// document.write("Elapsed milliseconds since January 1, 1970: "+EpDate.getMilliseconds(),"<br>");
-document.write("Elapsed milliseconds since January 1, 1970: ","<br>");
-document.write("Elapsed minutes since January 1, 1970: ","<br>");
+var date = new Date();
+var elapsedMilliSeconds = new Date().getTime();
+var elapsedMinutes = Math.round(elapsedMilliSeconds / (1000 * 60));
+
+document.write("Current Date: "+ date,"<br>");
+document.write("Elapsed milliseconds since January 1, 1970: ",elapsedMilliSeconds,"<br>");
+document.write("Elapsed minutes since January 1, 1970: ",elapsedMinutes,"<br>");
 
 // Q-7
 var Date = new Date();
 var dayarr = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
 var currhours= dayarr[Date.getHours()]
-alert(currhours)
 if (currhours>=0 && currhours<=11){
   document.write("Its AM")  
 } 
@@ -1444,5 +1445,207 @@ else{
 }
 
 // Q-8
-var Date = new Date("2020-12-31");
-document.write("Later Date"+Date,"<br>");
+var date = new Date("2020-12-31");
+document.write("Later Date"+date,"<br>");
+
+
+// Q-9 --- Chk
+  var RamadanMilliSeconds = new Date("Mar 02 2025").getTime();
+  var currentMilliSeconds = new Date().getTime();
+  var diff = currentMilliSeconds - RamadanMilliSeconds;
+  var days = Math.round(diff / (1000 * 60 * 60 * 24));
+
+document.write(days," days have passed since 1st Ramadan 2025","<br>");
+
+// Q-10 --- Chk
+var date = new Date();
+var currentHrs = date.getHours;
+document.write("Current Date: ",date)
+document.write(currentHrs);
+
+Q-11
+
+Q-12
+
+// Q-13
+
+var birthyear = +prompt("Enter your birth year");
+var currentyear = new Date().getFullYear();
+var diff = currentyear - birthyear;
+
+document.write("Your age:", diff,"<br>");
+document.write("Your birth year is", birthyear,"<br>")
+
+// Q-14
+
+var usrNm = prompt("Enter your name:");
+var crMnth = new Date().getMonth();
+var arrMnth = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+var noofUnt = 410
+var chgsperUnt = 16
+var latsrchgs = 350
+
+document.write("<h1>","K-Electric Bill:","</h1>");
+document.write("Customer Name:", "<strong>",usrNm,"</strong><br>");
+document.write("Month:", "<strong>",arrMnth[crMnth],"</strong><br>");
+document.write("Number of units:",  "<strong>",noofUnt,"</strong><br>");
+document.write("Charges per nnit:",  "<strong>",chgsperUnt,"</strong><br>");
+document.write("Net Amount Payable (within due date):",  "<strong>",noofUnt * chgsperUnt,"</strong><br>");
+document.write("Late payment surcharge:",  "<strong>",latsrchgs,"</strong><br>");
+document.write("Gross Amount Payable (after due date):",  "<strong>",(noofUnt * chgsperUnt) + latsrchgs,"</strong><br>");
+
+// Chapter No. 35-38  --- FUNCTION
+// -------------------------------
+
+// Q-1
+function cntdate(){
+    var cntDate = new Date();
+    alert(cntDate)
+}
+
+cntdate();
+
+// Q-2
+function greet(){
+    var usrfirstname = prompt("Enter your first name:");
+    var usrlastname = prompt("Enter your last name:");
+    var fullname = usrfirstname + " " + usrlastname
+    alert("Welcome Mr/Ms. "+fullname+" to our website")
+} 
+
+greet();
+
+// Q-3
+function addition(){
+    var usrfirstnumber = +prompt("Enter first number:");
+    var usrsecondnumber = +prompt("Enter second number:");
+
+    var addition = usrfirstnumber + usrsecondnumber
+    alert("Your sum is: "+ addition)
+}
+
+addition();
+
+// Q-4
+function calc(){
+    var usrinp1 = +prompt("Enter first number: ");
+    var usrinp2 = +prompt("Enter second number: ");
+    var usropt = prompt("Enter operator (+, -, *, /, %): ");
+    var resultadd = usrinp1+usrinp2;
+    var resultsub = usrinp1-usrinp2
+    var resultmtp = usrinp1*usrinp2
+    var resultdiv = usrinp1/usrinp2
+    var resultrmd = usrinp1%usrinp2
+    if(usropt=="+"){
+        document.write("Your result is: "+resultadd);
+    }
+    else if(usropt=="-"){
+        document.write("Your result is: "+resultsub);
+    }
+    else if(usropt=="*"){
+        document.write("Your result is: "+resultmtp);
+    }
+    else if(usropt=="/"){
+        document.write("Your result is: "+resultdiv);
+    }
+    else if(usropt=="%"){
+        document.write("Your result is: "+resultrmd);
+    }
+    else{
+        alert("Only operand allowed")
+    }
+}
+
+calc();
+
+// Q-5
+function square(){
+    var num = +prompt("Enter any number for square: ");
+    var numsq = num * num;
+    document.write("Your square is: "+numsq);
+}
+
+square();
+
+// Q-6
+function fraction(){
+    var num=1;
+    for (i=1;i<=10;i++){
+        num = num * i;
+        document.write(i+" =  "+num+"<br>");      
+    }
+}
+
+fraction();
+
+// Q-7
+function counting(){
+    var numstr = +prompt("Enter starting number: ");
+    var numend = +prompt("Enter ending number: ");
+
+    for (i=numstr;i<=numend;i++){
+        document.write(i+"<br>")
+    }
+}
+
+counting();
+
+// Q-8
+var inpbase = +prompt("Enter base");
+var inpper = +prompt("Enter perpendicular");
+function calculateHypotenuse(){
+    document.write(inpbase + inpper+"<br>");
+}
+
+function calculateSquare(){
+    var basesq = inpbase * inpbase;
+    var persq = inpper * inpper;
+    document.write(basesq + persq+"<br>");
+}
+calculateHypotenuse();
+calculateSquare();
+
+Q-9
+
+// Q-10
+
+function palindrome(){
+    var str = prompt("Enter a String");
+    var strlngth = str.length;
+    strup=""
+    
+    for(i=str.length-1;i>=0;i--){
+        var strup = strup+str[i]
+    }
+
+    if (str === strup){
+        document.write("This is a palindrome string")
+    }
+    else{
+        document.write("This is not a palindrome string")
+    }
+}
+
+palindrome();
+
+// // Q-11
+var text = prompt("Type any text");
+const myArray = text.split(" ");
+
+document.write(myArray);
+document.write("<br>");
+
+for(i=0;i<=myArray.length;i++){
+    var capstr = myArray[i][0].toUpperCase()
+    var fullstr = capstr+
+    document.write(capstr+"<br>")
+}
+
+// Q-12
+
+var text = prompt("Type any text");
+const myArray = text.split(" ");
+for(i=0;i<=myArray.length;i++){
+    document.writeln(myArray[i].length+"<br>");
+    var count = myArray[i].length; 
+}
