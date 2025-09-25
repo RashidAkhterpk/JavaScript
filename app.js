@@ -1605,7 +1605,22 @@ function calculateSquare(){
 calculateHypotenuse();
 calculateSquare();
 
-Q-9
+// Q-9
+// i)
+function area(width, height){
+    var area = width * height;
+    alert("Area: "+area)
+}
+
+area(50,20)
+
+// ii)
+function area(width, height){
+    var area = width * height;
+    alert("Area: "+area)
+}
+
+area(+prompt("Enter width"),+prompt("Enter height"))
 
 // Q-10
 
@@ -1628,24 +1643,191 @@ function palindrome(){
 
 palindrome();
 
-// // Q-11
-var text = prompt("Type any text");
-const myArray = text.split(" ");
-
-document.write(myArray);
-document.write("<br>");
-
-for(i=0;i<=myArray.length;i++){
-    var capstr = myArray[i][0].toUpperCase()
-    var fullstr = capstr+
-    document.write(capstr+"<br>")
+// Q-11
+function fullname(){
+    var text = prompt("Type any text");
+    const myArray = text.split(" ");
+    
+    for(i=0;i<=myArray.length;i++){
+    var capstr = myArray[i][0].toUpperCase()+myArray[i].slice(1);
+    document.write(capstr+" ")
+    }
 }
+
+fullname()
+
 
 // Q-12
-
-var text = prompt("Type any text");
-const myArray = text.split(" ");
-for(i=0;i<=myArray.length;i++){
-    document.writeln(myArray[i].length+"<br>");
-    var count = myArray[i].length; 
+function textCount(){
+    var text = "Web Development Tutorial";
+    var myNum = 0
+    var myArray = text.split(" ");
+    for(var i=0;i<=myArray.length;i++){
+        var count = myArray[i].length;
+        if (myNum <= count){
+            var flag="Yes",
+            myNum = count;
+            var text = myArray[i];
+        }
+    }
+    if (flag="Yes"){
+        document.write(text);
+    }
 }
+
+textCount()
+
+// Chapter No. 38-42  --- FUNCTIONS, SWITCH STATEMENTS, WHILE… DO WHILE LOOPS
+// --------------------------------------------------------------------------
+
+// Q-1
+function power(){
+    var num1 = +prompt("Enter any number");
+    var num2 = +prompt("Enter power");
+
+    var result = 1;
+    for (var i = 0; i < num2; ++i) {
+        result = result * num1;
+    }
+
+    document.write(result);
+}
+
+power();
+
+// Q-2
+var num = +prompt("Enter any Year to check leap year or not....");
+
+if (num%4==0){
+    alert(num+" is a leap Year");
+}
+else{
+    alert(num+" is not a leap Year");
+}
+
+// Q-3 
+var a, b, c
+function S(a,b,c){
+    var S = (a+b+c) / 2;
+    document.write(S+"<br>");
+    return (a+b+c) / 2
+    return a;
+    return b;
+    return c;
+}
+var value = S(+prompt("Enter first triangle angle"),+prompt("Enter second triangle angle"),+prompt("Enter third triangle angle"));
+console.log(value)
+
+function area(value,a,b,c){
+    var area = value*(value-a)*(value-b)*(value-c);
+    // document.write(area, value, a, b, c);
+    console.log(value)
+}
+area(value, 2,2,2);
+
+// Q-4
+var Totalmarks;
+function Marks(mark1,mark2,mark3){
+    // document.write(mark1, "  ", mark2, "  ", mark3, "<br>   ");
+    document.write("Subject 1 Marks: ",mark1,"<br>");
+    document.write("Subject 2 Marks: ",mark2,"<br>");
+    document.write("Subject 3 Marks: ",mark3,"<br>");
+    return Totalmarks = mark1 + mark2 + mark3; 
+}
+
+Marks(+prompt("Enter 1st subject marks"),+prompt("Ent/er 2nd subject marks"),+prompt("Enter 3rd subject marks"));
+document.write("Total Marks: ",Totalmarks,"<br>");
+
+function percent(){
+    var Percentage = Totalmarks / 300 * 100
+
+    document.write("Percentage: ",Percentage," % <br>")
+}
+
+percent()
+
+function average(){
+    var average = Totalmarks / 3
+
+    document.write("Average: ",Math.round(average))
+}
+
+average()
+
+
+// Q-5 --- Check
+
+
+// Q-6 
+// var text = "the quick brown fox jumps over the lazy dog";
+function checkvowels(text){
+var mytext="";
+for (var i=0;i<=text.length-1;i++){
+    if (text[i]!=="a" && text[i]!=="e" && text[i]!=="i" && text[i]!=="o" && text[i]!=="u"){
+        mytext=mytext+text[i];
+    } 
+}
+document.write(mytext)
+}
+checkvowels(prompt("Enter a sentence").toLowerCase());
+
+// Q-7 --- Check
+var text = "Pleases read this application and give me gratuity";
+
+var myarr = text.split(" ");
+console.log(myarr)
+var mytext=""
+
+for (var i=1; i<=myarr.length;i++){
+    if(myarr[i].slice(i,2)=='ea'){
+        mytext = myarr[i].slice(i,2);
+        console.log("occurrences are ", )
+    }
+}
+// Q-8 --- Check
+
+// Q-9 --- Check
+function overtime(othour, otamnt){
+    var otchghrs = othour - 40;
+
+    if (otchghrs > 0){
+        alert("Overtime Hours: "+otchghrs+"       Overtime Rate: "+otamnt+"       Overtime Amount: "+otchghrs*otamnt)
+    }
+}
+
+overtime(+prompt("Enter overtime hours"),12)
+
+// Q-10 --- Check
+var amount = +prompt("Enter amount to withdraw");
+
+switch(amount){
+    case amount.length=6:
+        console.log("Lacs")
+        break;
+    case amount.length=5:
+        console.log("Ten Thousands")
+        break;
+    case amount.length=4:
+        console.log("Thousands")
+        break;
+    case amount.length=3:
+        console.log("Hundreds")
+        break;
+    case amount.length=2:
+        console.log("Tens")
+        break;
+    case amount.length=1:
+        console.log("Units")
+        break;        
+}
+
+// Chapter No. 43-48  --- EVENTS
+// -----------------------------
+
+// Q-1   Done
+
+// Q-2   Done
+
+// Q-3
+
+// Q-4   Done
