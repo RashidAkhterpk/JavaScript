@@ -1798,7 +1798,7 @@
 // overtime(+prompt("Enter overtime hours"),12)
 
 // // Q-10 --- Check
-var amount = +prompt("Enter amount to withdraw");
+// var amount = +prompt("Enter amount to withdraw");
 
 // switch(amount){
 //     case amount.length=6:
@@ -1856,3 +1856,34 @@ var amount = +prompt("Enter amount to withdraw");
         
 // }
 
+// // // Chapter No. 58-67  --- DOM
+// // // --------------------------
+
+// // Q-1
+// // i)
+
+// var pElement = document.getElementById("main-content");
+
+// // ii)
+// console.log(pElement);
+
+// // iii)
+// var renderElement = document.getElementsByClassName("render");
+
+// console.log(renderElement.innerText);
+
+// // iv)
+// var fnameElement = document.getElementById("last-name");
+
+// console.log(fnameElement.innertext);
+
+// v)
+function submit(){
+    var lnameElement = document.getElementById("last-name");
+    var emailElement = document.getElementById("email");
+    console.log(lnameElement.innertext);
+    console.log(emailElement.innertext);
+    document.write(lnameElement.innerHTML);
+    document.write(emailElement.innerHTML);
+    
+}
